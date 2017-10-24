@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="ask-wrap">
+    <view class="input">
+        <textarea placeholder="请详细描述您的需求，包含不限于财务情况、理财规划、家庭规划、保险需求、投保疑问等；您也可以上传投保计划书照片或者其它需要保险师、反辩师答疑解惑的文件材料，这样更容易获得保险师和反辩师专业、准确的回答" maxlength="{{noteMaxLen}}" bindinput="bindWordLimit" placeholder-style="width:100%;"/>
+        <view class="weui-textarea-counter hint-num">
+          {{currentNoteLen|0}}/{{noteMaxLen}}
+        </view>
+    </view>
+    <view class="add-img">
+
+      <!-- <image class="img" src="../../assets/img/bxer-test.png"></image>
+      <image class="img" src="../../assets/img/bxer-test.png"></image>
+      <image class="img" src="../../assets/img/bxer-test.png"></image>
+      <image class="img" src="../../assets/img/bxer-test.png"></image> -->
+
+      <view class="icon-border" bindtap="bindChooseImage">
+        <image class="icon" src="../../assets/icon/add-img.png"></image>
+      </view>
+      <view class="text">
+        最多上传5张参考图片
+      </view>
+
+    </view>
+  </view>
+  <view class="submit" bindtap="showTopTips">
+    提交问题
+  </view>
+
+</view>

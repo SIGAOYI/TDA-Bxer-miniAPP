@@ -1,0 +1,160 @@
+.notice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%rpx;
+  height: 76rpx;
+  background-color: #fff;
+}
+.tip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 74rpx;
+  width: 373rpx;
+  font-size: 23rpx;
+  color: #A1A1A1;
+  letter-spacing: -0.74rpx;
+}
+.vline {
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #D8D8D8;
+}
+.fber-list-wrap {
+  margin-top: 20rpx;
+  padding-left: 37rpx;
+  background-color: #fff;
+}
+.fber-list {
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 267rpx;
+  padding: 25rpx 37rpx 23rpx 0;
+  background-color: #fff;
+  border-bottom: 1rpx solid #DDD;
+}
+.fber-list:last-child {
+  border-bottom: none !important;
+}
+.fber-list .fber-left {
+  margin-right: 25.5rpx;
+  width: 130rpx;
+  height: 100%;
+}
+.fber-list .fber-left .avatar {
+  width: 130rpx;
+  height: 130rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.fber-list .fber-left .avatar .fber-photo {
+  width: 130rpx;
+  height: 130rpx;
+}
+.fber-list .fber-left .status {
+  margin: 31rpx auto;
+  width: 69rpx;
+  height: 28rpx;
+  text-align: center;
+  line-height: 28rpx;
+  color: #FFF;
+  font-size: 20rpx;
+  border-radius: 5rpx;
+}
+.fber-list .fber-left .status.online {
+  background-color: #7ED321;
+}
+.fber-list .fber-left .status.offline {
+  background-color: #9B9B9B;
+}
+.fber-list .fber-center {
+  flex: 1;
+  width: 435rpx;
+  height: 100%;
+}
+.fber-list .fber-center .personal-info .fber-name {
+  font-size: 29rpx;
+  line-height: 41rpx;
+}
+.fber-list .fber-center .personal-info .fber-intro {
+  display: flex;
+}
+.fber-list .fber-center .personal-info .fber-intro .fber-profile {
+  margin-top: 5rpx;
+  margin-right: 25rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #9B9B9B;
+}
+.fber-list .fber-center .personal-info .fber-intro .fber-profile:last-child {
+  margin-right: 0 !important;
+}
+.fber-list .fber-center .fber-item-style {
+  display: flex;
+  margin-top: 17rpx;
+}
+.fber-list .fber-center .fber-item-style .text {
+  margin-right: 15rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  color: #9B9B9B;
+}
+.fber-list .fber-center .fber-item-style .text:last-child {
+  margin-right: 0 !important;
+}
+.fber-list .fber-center .fber-item-style .text .label {
+  margin-right: 5rpx;
+}
+.fber-list .fber-center .fber-item-style .rate {
+  margin-right: 12rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: #FFB300;
+}
+.fber-list .fber-center .fber-item-style .text .orange-text-color {
+  color: #FF6600;
+}
+.fber-list .fber-center .fber-tag {
+  display: flex;
+  margin-top: 19rpx;
+  margin-bottom: 23rpx;
+}
+.fber-list .fber-center .fber-item-style .fber-star {
+  margin-top: 5rpx;
+  margin-right: 6rpx;
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+}
+.fber-list .fber-center .fber-tag .tag-item {
+  margin-right: 15rpx;
+  padding: 0 13rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  border-radius: 5rpx;
+  color: #FFF;
+  background-color: #FF6600;
+  opacity: .8;
+  font-size: 20rpx;
+}
+.fber-list .fber-center .fber-tag .tag-item:last-child {
+  margin-right: 0 !important;
+}
+.fber-list .fber-right {
+  width: 128rpx;
+  height: 100%;
+}
+.fber-list .fber-right .btn {
+  margin-top: 9rpx;
+  padding: 0 !important;
+  height: 51rpx;
+  line-height: 51rpx;
+  font-size: 23rpx;
+  color: #FFF;
+  background: #FF6600;
+  border-radius: 11rpx;
+}

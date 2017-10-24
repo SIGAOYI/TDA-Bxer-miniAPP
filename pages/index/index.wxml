@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="page">
+  <view class="index">
+    <view class="head">
+      <view class="header"  bindtap="bindArtical">
+        <image class="headIcon"src="../../assets/icon/tdagroup.png" alt=""></image>
+        <text class="article">天地安集团</text>
+      </view>
+      <view class="header"  bindtap="bindArtical">
+        <image class="headIcon"src="../../assets/icon/keepsafe.png" alt=""></image>
+        <text class="article">保单效力维护</text>
+      </view>
+      <view class="header"  bindtap="bindArtical">
+        <image class="headIcon"src="../../assets/icon/productgem.png" alt=""></image>
+        <text class="article">产品一览</text>
+      </view>
+      <view class="header"  bindtap="bindArtical">
+        <image class="headIcon"src="../../assets/icon/company.png" alt=""></image>
+        <text class="article">保险公司</text>
+      </view>
+    </view>
+    <view class="order-wrap">
+      <text class="title">对人生负责,快问保险师</text>
+      <text class="subtitle">专业的风险评估 | 适合你的保险产品 | 高性价比的选择决策</text>
+      <button class="consultbtn" type="consultbtn" name="consult" bindtap="bindConsult">快速咨询</button>
+    </view>
+    <view class="banner">
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+       <block wx:for="{{movies}}" wx:for-index="index">
+        <swiper-item>
+           <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+       </block>
+      </swiper>
+    </view>
+    <view class="listwrap">
+      <view class="listhead">
+        <text class="listtitle">长知识</text>
+        <text class="listtmore">更多</text>
+        <image class="iconmore"src="../../assets/icon/more.png" alt=""></image>
+      </view>
+      <view class="list">
+        <view class="listitem" bindtap="bindArtical">
+          <image class="posticon"src="../../assets/icon/posticon.png" alt=""></image>
+          <text class="post">什么是世界首创的“保单效力维护协议”？</text>
+        </view>
+        <view class="listitem" bindtap="bindArtical">
+          <image class="posticon"src="../../assets/icon/posticon.png" alt=""></image>
+          <text class="post">为什么说“天地安保险师”是中立客观的？</text>
+        </view>
+        <view class="listitem" bindtap="bindArtical">
+          <image class="posticon"src="../../assets/icon/posticon.png" alt=""></image>
+          <text class="post">反辩师是什么？为什么设立反辩机制？</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

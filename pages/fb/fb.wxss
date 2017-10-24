@@ -1,0 +1,156 @@
+.notice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%rpx;
+  height: 76rpx;
+  padding-left: 36rpx;
+  background-color: #fff;
+}
+.notice .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.notice .des-name {
+  font-size: 26rpx;
+  line-height: 76rpx;
+}
+.fb {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 110rpx;
+}
+.fb .fb-item {
+  margin-top: 30rpx;
+  padding-left: 37rpx;
+  padding-right: 37rpx;
+}
+.fb .fb-item .fb-title {
+  font-size: 26rpx;
+  color: #9B9B9B;
+}
+.fb .fb-item .fb-content {
+  margin-left: -27rpx;
+  padding-left: 27rpx;
+  padding-top: 30rpx;
+  width: 710rpx;
+  background-color: #fff;
+}
+.fb .fb-item .fb-content .fb-text {
+  font-size: 23rpx;
+  color: #000000;
+}
+.fb .fb-item .fb-content .fb-img {
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  overflow: hidden;
+}
+.fb .fb-item .fb-content .fb-time {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10rpx;
+  line-height: 1.2;
+  font-size: 20rpx;
+  color: #9B9B9B;
+}
+.btn-ask {
+  margin-top: 40rpx;
+  height: 110rpx;
+  text-align: center;
+  line-height: 110rpx;
+  font-size: 33rpx;
+  background-color: #FFCAA7;
+  color: #fff;
+}
+.btn-fine {
+  position: fixed;
+  bottom: 0;
+  height: 110rpx;
+  width: 750rpx;
+  line-height: 110rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 38rpx;
+  background-color: #FF6600;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100%;
+  z-index: 1;
+  background-color: #000;
+  opacity: .5;
+}
+.rate {
+  position: fixed;
+  bottom: 0;
+  height: 807rpx;
+  width: 100%;
+  z-index: 2;
+  background-color: #FDFCFC;
+}
+.rate .rate-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #D8D8D8;
+  font-size: 29rpx;
+  color: #9B9B9B;
+}
+.rate .icon {
+  position: absolute;
+  right: 26rpx;
+  width: 28rpx;
+  height: 28rpx;
+  overflow: hidden;
+}
+.rate .rate-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60rpx;
+  margin-top: 68rpx;
+}
+.rate .rate-star .starS{
+  margin-right: 30rpx;
+  width: 57rpx;
+  height: 57rpx;
+  background-image: url("http://oq4ops81t.bkt.clouddn.com/rate-star-s.png");
+  background-size: 57rpx 57rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.rate .rate-star .hideStar {
+  background-image: url("http://oq4ops81t.bkt.clouddn.com/rate-star.png");
+  width: 57rpx;
+  height: 57rpx;
+  background-size: 57rpx 57rpx;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.rate .rate-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52rpx;
+}
+.rate .rate-comment .input{
+  padding-top: 49rpx;
+  padding-left: 34rpx;
+  border: 1rpx solid #DDDDDD;
+  width: 680rpx;
+  height: 305rpx;
+  background-color: #fff;
+  font-size: 29rpx;
+  line-height: 33rpx;
+}

@@ -1,0 +1,47 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  align-items: center;
+  height: 134rpx;
+  background-color: #fff;
+}
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000000;
+}
+.days {
+  position: relative;
+  left: 220rpx;
+}
+.day {
+  margin-left: 4rpx;
+  margin-right: 4rpx;
+  font-size: 44rpx;
+  color: #FF6600;
+  font-weight: bold;
+}
+.share {
+  display: flex;
+  flex-wrap: nowrap;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #fff;
+  text-align: left;
+  font-size: 33rpx;
+  line-height: inherit;
+  width: 750rpx;
+}
+.share-hover {
+  background-color:#ececec
+}
+.share:after {
+  width: 0 !important;
+  height: 0 !important;
+}

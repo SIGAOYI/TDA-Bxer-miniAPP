@@ -1,0 +1,46 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">页面用途(如:天地安集团)</view>
+        <view class="page__desc">页面描述(如:集团背景的介绍)</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <view class="weui-article__h1">段落标题(如:集团背景)</view>
+            <view class="weui-article__section">
+                <view class="weui-article__title">章节标题(如:子公司介绍)</view>
+                <view class="weui-article__p">
+                    <image class="weui-article__img" src="../../assets/img/test.jpg" mode="aspectFit" style="height: 180px" />
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.1 小节标题(如:厦门天地安代理公司介绍)</view>
+                    <view class="weui-article__p">
+                        天地安集团发起于保险专业代理机构，历经15年，发展成为拥有3家专业保险代理企业、一家全国牌照保险公估企业，以及网络科技公司、汽车服务公司等二十多家子公司和分公司的企业集团。
+                    </view>
+                    <view class="weui-article__p">
+                        天地安网络科技公司自主开发的保险竞标网，是利用互联网技术搭建的保险网络交易平台。她可以让所有投保人轻松得到多家保险公司的报价，可以让大宗保险招投标在互联网技术支持下，实现公平交易。
+                    </view>
+                    <view class="weui-article__p">
+                      天地顺保险公估公司和天地安汽车服务公司构成车险公估业务与网约车业务的跨界合作，形成混业盈利模式，为车险客户服务提供了优于保险同业的硬件条件。进而为实体保险交易平台携带广大中小保险公司产品进入县乡领域解决了售后服务障碍。
+                    </view>
+                    <view class="weui-article__p">
+                      汽车综合业务在提高车险客户服务的同时，还得到了控制车险不当成本的抓手，让保险交易平台的行业价值提高了一个层面。
+                    </view>
+                    <view class="weui-article__p">
+                      天地安集团所属的三家保险代理公司，在保险行业改革开放的政策支持下，积极铺设县乡机构，填补保险行业基层机构的空缺。利用交易平台的优势，集中几十家保险公司的产品和服务，把保险市场化改革产生的种种优惠带给广大基层投保人。
+                    </view>
+                    <view class="weui-article__p">
+                      总之，天地安集团深耕于保险行业，是保险市场化的产物，是促进保险交易走向公平文明的产物，是可以为保障投保人权益起积极作用的产物，必然随着市场化保险业的发展而发展。
+                    </view>
+
+                    </view>
+                </view>
+                <view class="weui-article__section">
+                    <view class="weui-article__h3">1.2 节标题</view>
+                    <view class="weui-article__p">
+                        诸如此类以此类推....
+                    </view>
+                    <image class="weui-article__img" src="../../assets/img/test.jpg" mode="aspectFit" style="height: 180px" />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

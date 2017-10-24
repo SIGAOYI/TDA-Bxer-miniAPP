@@ -1,0 +1,129 @@
+<!--logs.wxml-->
+<view class="page">
+  <view class="notice">
+    <image class="avatar" src="../../assets/img/bxshi.png"></image>
+    <text class="des-name">反辩师姓名</text>
+  </view>
+  <view class="fb">
+    <!--  用户需求简报 -->
+    <view class="fb-item">
+      <view class="fb-title">
+        用户需求简报:
+      </view>
+      <view class="fb-content">
+        <view class="fb-text">
+          用户情况：
+          三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
+          用户需求：
+          问题还需要投什么险？
+        </view>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+
+        <view class="fb-time">
+          <text>
+            2017-10-10
+          </text>
+        </view>
+      </view>
+    </view>
+    <!--  保险师建议 -->
+    <view class="fb-item">
+      <view class="fb-title">
+        保险师建议:
+      </view>
+      <view class="fb-content">
+        <view class="fb-text">
+          用户情况：
+          三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
+          用户需求：
+          问题还需要投什么险？
+        </view>
+        <view class="fb-time">
+          <text class="fb-time">
+            2017-10-10
+          </text>
+        </view>
+      </view>
+    </view>
+    <!--  反辩师建议 -->
+    <view class="fb-item">
+      <view class="fb-title">
+        反辩师建议:
+      </view>
+      <view class="fb-content">
+        <view class="fb-text">
+          用户情况：
+          三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
+          用户需求：
+          问题还需要投什么险？
+        </view>
+        <view class="fb-time">
+          <text class="fb-time">
+            2017-10-10
+          </text>
+        </view>
+      </view>
+    </view>
+    <!--  用户追问 -->
+    <view class="fb-item">
+      <view class="fb-title">
+        用户追问:
+      </view>
+      <view class="fb-content">
+        <view class="fb-text">
+          用户情况：
+          三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
+          用户需求：
+          问题还需要投什么险？
+        </view>
+        <view class="fb-time">
+          <text class="fb-time">
+            2017-10-10
+          </text>
+        </view>
+      </view>
+    </view>
+    <!-- 补充提问按钮 -->
+    <view class="btn-ask" bindtap="bindAsk">
+      还有疑问,补充提问
+    </view>
+  </view>
+
+  <view class="btn-fine" bindtap="showMask">
+    没有问题了,我要投保
+  </view>
+  <!-- 遮罩层 -->
+  <view class="mask" hidden="{{ flag }}" catchtouchmove="noScroll" catchtap="hideMask">
+  </view>
+
+  <!-- 评价框 -->
+  <view class="rate" hidden="{{ flag }}" catchtouchmove="noScroll">
+    <view class="rate-head">
+      <text>评价这位反辩师</text>
+      <image class="icon" src="../../assets/icon/close.png" catchtap="hideMask"></image>
+    </view>
+    <view class="rate-star">
+      <!-- <view class="starS   {{flag2>=1? '': 'hideStar'}}"  bindtap="changeColor11"></view>
+      <view class="starS   {{flag2>=2? '': 'hideStar'}}"  bindtap="changeColor12"></view>
+      <view class="starS   {{flag2>=3? '': 'hideStar'}}"  bindtap="changeColor13"></view>
+      <view class="starS   {{flag2>=4? '': 'hideStar'}}"  bindtap="changeColor14"></view>
+      <view class="starS   {{flag2>=5? '': 'hideStar'}}"  bindtap="changeColor15"></view> -->
+      <view class="{{ flag2 >= index ? 'starS' : 'starS hideStar' }}"
+            bindtap="changeColor"
+            wx:for="{{ starArr }}"
+            wx:key="{{ index }}"
+            data-index="{{ index }}">
+      </view>
+    </view>
+    <view class="rate-comment">
+      <view class="input">
+        <textarea class="weui-textarea" placeholder="请对反辩师的服务做出客观的评价，您的评价将更好地指引反辩师优化保险方案" placeholder-style="line-height: 300;" style="height: 305rpx;width: 694rpx;z-index:2;" fixed />
+      </view>
+    </view>
+    <view class="btn-fine">提交评价</view>
+  </view>
+</view>

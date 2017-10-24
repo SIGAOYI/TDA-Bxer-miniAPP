@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/consult/consult",
+    "pages/bxerlist/bxerlist",
+    "pages/bxerdetail/bxerdetail",
+    "pages/fberlist/fberlist",
+    "pages/fberdetail/fberdetail",
+    "pages/fbask/fbask",
+    "pages/orderlist/orderlist",
+    "pages/orderdetail/orderdetail",
+    "pages/commonartical/commonartical",
+    "pages/fb/fb"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "天地安保险师",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":"true",
+    "backgroundColor":"#EFEFF4"
+  },
+  "tabBar": {
+    "backgroundColor":"#F7F7FA",
+    "color":"#7F8389",
+    "selectedColor":"#FF6600",
+    "borderStyle":"white",
+    "position":"bottom",
+      "list": [{
+        "pagePath": "pages/index/index",
+        "text": "保险师",
+        "iconPath":"assets/icon/main.png",
+        "selectedIconPath":"assets/icon/main-s.png"
+      }, {
+        "pagePath": "pages/consult/consult",
+        "text": "咨询",
+        "iconPath":"assets/icon/consult.png",
+        "selectedIconPath":"assets/icon/consult-s.png"
+      },{
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath":"assets/icon/my.png",
+        "selectedIconPath":"assets/icon/my-s.png"
+      }]
+    },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

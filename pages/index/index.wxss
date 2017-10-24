@@ -1,0 +1,146 @@
+.index {
+}
+.head {
+  display: flex;
+  flex-direction: row;
+  height: 187rpx;
+  width: 750rpx;
+  background-color: #FFFFFF;
+}
+.header {
+  height: 187rpx;
+  width: 187rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 23rpx;
+  color: #B9B9B9;
+  letter-spacing: 0.2rpx;
+}
+.headIcon {
+  padding-top: 32.5rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+.article {
+  padding-top: 22rpx;
+}
+.order-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rpx;
+  height: 289rpx;
+  width: 750rpx;
+  background-color: #FFFFFF;
+}
+.title {
+  padding-top: 46rpx;
+  font-size: 38rpx;
+  color: #3D3D3D;
+  font-weight: bold;
+  letter-spacing: 0.7rpx;
+}
+.subtitle {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+  color: #B9B9B9;
+  letter-spacing: 0.23rpx;
+}
+.consultbtn {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 23rpx;
+  height: 88rpx;
+  width: 675rpx;
+  background: #FF6600;
+  font-size: 38rpx;
+  color: #FFFFFF;
+  letter-spacing: 0.33rpx;
+  border-radius: 16rpx;
+}
+.banner {
+  margin-top: 25rpx;
+  height: 246rpx;
+  width: 750rpx;
+  background-color: #FFFFFF;
+}
+.swiper {
+ height: 246rpx;
+ width: 750rpx;
+}
+.swiper image {
+ height: 100%;
+ width: 100%;
+}
+.listwrap {
+  margin-top: 25rpx;
+  height: 313rpx;
+  width: 750rpx;
+  background-color: #FFFFFF;
+}
+.listhead {
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  height: 84rpx;
+}
+.listhead:after {
+  content: '';
+  display: block;
+  height: 1rpx;
+  width: 100%;
+  zoom: 1;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  border-bottom: 1rpx solid #EBEBEB;
+}
+.listtitle {
+  margin-left: 36rpx;
+  margin-top: 23rpx;
+  font-size: 29rpx;
+  color: #000000;
+  letter-spacing: 0.92rpx;
+}
+.listtmore {
+  margin-left: 516rpx;
+  margin-top: 23rpx;
+  font-size: 29rpx;
+  color: #B9B9B9;
+  letter-spacing: 0.92rpx;
+}
+.iconmore {
+  margin-left: 3rpx;
+  margin-top: 20rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+.list {
+  margin-left: 37rpx;
+  margin-top: 33rpx;
+}
+.listitem {
+  margin-top: 20rpx;
+  height: 48rpx;
+  display: flex;
+  flex-direction: row;
+}
+.posticon {
+  margin-top: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.post {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #000000;
+  letter-spacing: 0.83rpx;
+}

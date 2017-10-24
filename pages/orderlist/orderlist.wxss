@@ -1,0 +1,129 @@
+.notice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%rpx;
+  height: 76rpx;
+  background-color: #fff;
+}
+.tip {
+  font-size: 23rpx;
+  color: #9B9B9B;
+  letter-spacing: 0;
+  margin-left: 23rpx;
+}
+.link {
+  position: absolute;
+  right: 23rpx;
+  font-size: 23rpx;
+  color: #3B7EEE;
+}
+.order-wrap {
+  margin-top: 24rpx;
+}
+.order {
+  width: 100%rpx;
+  height: 336rpx;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+.order-head {
+  display: flex;
+  flex-direction: row;
+  height: 79rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #CDCDCD;
+}
+.bxerimg {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 4.5rpx;
+  margin-left: 20rpx;
+}
+.bxername {
+  margin-left: 18rpx;
+  font-size: 29rpx;
+  line-height: 79rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.iconmore {
+  position: absolute;
+  margin-top: 17.5rpx;
+  right: 27rpx;
+  width: 44rpx;
+  height: 44rpx;
+}
+.brief-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 108rpx;
+  width: 100%;
+}
+.brief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 144rpx;
+}
+.subbrief {
+  font-size: 26rpx;
+  color: #9C9C9C;
+}
+.subdata {
+  font-size: 26rpx;
+}
+.underline {
+  position: absolute;
+  left: 20rpx;
+  width: 710rpx;
+  height: 1rpx;
+  background-color: #CDCDCD
+}
+.head {
+  display: flex;
+  margin-top: 15rpx;
+}
+.title {
+  font-size: 23rpx;
+}
+.date {
+  font-size: 20rpx;
+}
+.head .item {
+  flex: 1;
+  text-align: center;
+  color: #555;
+}
+
+.head .item.success {
+  color: #FF6600 !important;
+}
+
+.head .item.success .line, .head .item.success .point {
+  background-color: #FF6600 !important;
+}
+
+.head .point {
+  position: relative;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #555;
+  border-radius: 50%;
+  margin: 20rpx auto;
+}
+.head .item:nth-child(1) .point .line {
+  display: none;
+}
+.head .item .line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -110rpx;
+  width: 100rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background-color: #555;
+}
