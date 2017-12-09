@@ -1,45 +1,45 @@
 <view class="page">
   <view class="notice">
-    <view class="tip">只看在线保险师</view>
+    <view class="tip" bindtap="onLine">只看在线保险师</view>
     <view class="vline"></view>
-    <view class="tip">按业绩排序</view>
+    <view class="tip" bindtap="performance">按业绩排序</view>
   </view>
   <view class="bxer-list-wrap">
 
-    <view class="bxer-list"  bindtap="bindDetail" wx:for="{{ bxer }}" wx:key="{{ index }}">
+    <view class="bxer-list"  bindtap="bindDetail" data-index="{{ index }}"  wx:for="{{ bxer }}" wx:key="{{ index }}">
       <view class="bxer-left">
         <view class="avatar">
-          <image class="bxer-photo" src="{{ item.avatar }}"></image>
+          <image class="bxer-photo" src="{{item.photo }}"></image>
         </view>
-        <view class="{{ item.status !== 1 ? 'status offline' : 'status online' }}">
-          {{ item.status !== 1 ? '忙碌' : '在线' }}
+        <view class="{{ item.logined ? 'status online' : 'status offline' }}">
+          {{ item.logined ? '在线' : '离线' }}
         </view>
       </view>
       <view class="bxer-center">
         <view class="personal-info">
           <view class="bxer-name">{{ item.name }}</view>
           <view class="bxer-intro">
-            <view class="bxer-profile">{{ item.college }}</view>
-            <view class="bxer-profile">{{ item.specialty }}</view>
+            <view class="bxer-profile">{{ item.university }}</view>
+            <view class="bxer-profile">{{ item.major }}</view>
             <view class="bxer-profile">{{ item.degree }}</view>
           </view>
         </view>
         <view class="bxer-advance bxer-item-style">
-          <view class="text"><text class="label">擅长: </text>{{ item.advance }}</view>
+          <view class="text"><text class="label">擅长: </text>{{ item.adept }}</view>
         </view>
         <view class="bxer-tag">
           <view class="tag-item"
             wx:for="{{ item.tag }}" wx:key="{{ idx }}"
-            wx:for-index="idx" wx:for-item="itemTag">{{ itemTag.tag1 }}</view>
+            wx:for-index="idx" wx:for-item="itemTag">{{ itemTag }}</view>
         </view>
         <view class="bxer-item-style">
-          <view class="text"><text class="label">成交业绩:</text><text class="orange-text-color">{{ item.amount }}元</text></view>
-          <view class="text"><text class="label">服务用户:</text><text class="orange-text-color">{{ item.times }}次</text></view>
+          <view class="text"><text class="label">成交业绩:</text><text class="orange-text-color">{{ item.performance }}元</text></view>
+          <view class="text"><text class="label">服务用户:</text><text class="orange-text-color">{{ item.consult_num }}次</text></view>
         </view>
       </view>
-      <view class="bxer-right">
-        <button class="btn" catchtap="" open-type="contact" hover-stop-propagation="true">咨询</button>
-      </view>
+      <!-- <view class="bxer-right">
+        <button class="btn" catchtap="contact" open-type="contact" hover-stop-propagation="true">咨询</button>
+      </view> -->
     </view>
 
   </view>

@@ -27,7 +27,6 @@
   background-color: #fff;
 }
 .fber-list {
-  position: relative;
   display: flex;
   box-sizing: border-box;
   width: 100%;
@@ -98,7 +97,7 @@
 }
 .fber-list .fber-center .fber-item-style .text {
   margin-right: 15rpx;
-  font-size: 20rpx;
+  font-size: 23rpx;
   line-height: 28rpx;
   color: #9B9B9B;
 }
@@ -112,7 +111,7 @@
   margin-right: 12rpx;
   line-height: 50rpx;
   text-align: center;
-  font-size: 50rpx;
+  font-size: 40rpx;
   color: #FFB300;
 }
 .fber-list .fber-center .fber-item-style .text .orange-text-color {
@@ -122,13 +121,6 @@
   display: flex;
   margin-top: 19rpx;
   margin-bottom: 23rpx;
-}
-.fber-list .fber-center .fber-item-style .fber-star {
-  margin-top: 5rpx;
-  margin-right: 6rpx;
-  width: 40rpx;
-  height: 40rpx;
-  overflow: hidden;
 }
 .fber-list .fber-center .fber-tag .tag-item {
   margin-right: 15rpx;

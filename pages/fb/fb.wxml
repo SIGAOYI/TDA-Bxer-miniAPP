@@ -2,7 +2,7 @@
 <view class="page">
   <view class="notice">
     <image class="avatar" src="../../assets/img/bxshi.png"></image>
-    <text class="des-name">反辩师姓名</text>
+    <text class="des-name">{{arguer.name}}</text>
   </view>
   <view class="fb">
     <!--  用户需求简报 -->
@@ -12,20 +12,22 @@
       </view>
       <view class="fb-content">
         <view class="fb-text">
-          用户情况：
+          {{order.demand_brief_report}}
+          <!-- 用户情况：
           三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
           用户需求：
-          问题还需要投什么险？
+          问题还需要投什么险？ -->
         </view>
+        <!-- <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
         <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
         <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
         <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
-        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
-        <image class="fb-img" src="../../assets/img/bxer-test.png"></image>
+        <image class="fb-img" src="../../assets/img/bxer-test.png"></image> -->
 
         <view class="fb-time">
           <text>
-            2017-10-10
+          {{order.consult_at}}
+            <!-- 2017-10-10 -->
           </text>
         </view>
       </view>
@@ -37,39 +39,45 @@
       </view>
       <view class="fb-content">
         <view class="fb-text">
-          用户情况：
+        {{order.consult_suggest}}
+          <!-- 用户情况：
           三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
           用户需求：
-          问题还需要投什么险？
+          问题还需要投什么险？ -->
         </view>
         <view class="fb-time">
           <text class="fb-time">
-            2017-10-10
+          {{order.consult_at}}
+            <!-- 2017-10-10 -->
           </text>
         </view>
       </view>
     </view>
+
+
+    
     <!--  反辩师建议 -->
-    <view class="fb-item">
+    <view class="fb-item" wx:for="{{ argueList }}" wx:key="{{ index }}">
       <view class="fb-title">
-        反辩师建议:
+        {{title[item.speaker]}}:
       </view>
       <view class="fb-content">
         <view class="fb-text">
-          用户情况：
+        {{item.text}}
+          <!-- 用户情况：
           三口之家，夫妻是朝九晚五的上班族，娃上托班。有房有车且无贷。除了社保和社区要求的儿保，未投其他保险。
           用户需求：
-          问题还需要投什么险？
+          问题还需要投什么险？ -->
         </view>
         <view class="fb-time">
           <text class="fb-time">
-            2017-10-10
+            {{item.created_at}}
           </text>
         </view>
       </view>
     </view>
     <!--  用户追问 -->
-    <view class="fb-item">
+    <!-- <view class="fb-item">
       <view class="fb-title">
         用户追问:
       </view>
@@ -86,14 +94,14 @@
           </text>
         </view>
       </view>
-    </view>
+    </view> -->
     <!-- 补充提问按钮 -->
-    <view class="btn-ask" bindtap="bindAsk">
+    <view class="btn-ask" wx:if="{{!evaluateFinish}}" bindtap="bindAsk">
       还有疑问,补充提问
     </view>
   </view>
 
-  <view class="btn-fine" bindtap="showMask">
+  <view class="btn-fine" wx:if="{{!evaluateFinish}}" bindtap="showMask">
     没有问题了,我要投保
   </view>
   <!-- 遮罩层 -->
@@ -119,11 +127,14 @@
             data-index="{{ index }}">
       </view>
     </view>
+    <form bindsubmit="evaluate" >
     <view class="rate-comment">
       <view class="input">
-        <textarea class="weui-textarea" placeholder="请对反辩师的服务做出客观的评价，您的评价将更好地指引反辩师优化保险方案" placeholder-style="line-height: 300;" style="height: 305rpx;width: 694rpx;z-index:2;" fixed />
+        <textarea class="weui-textarea" placeholder="请对反辩师的服务做出客观的评价，您的评价将更好地指引反辩师优化保险方案" placeholder-style="line-height: 300;"  name="textarea"  style="height: 305rpx;width: 694rpx;z-index:2;" fixed />
       </view>
     </view>
-    <view class="btn-fine">提交评价</view>
+    <button class="btn-fine" form-type="submit">提交评价</button>
+    <!-- <view class="btn-fine">提交评价</view> -->
+    </form>
   </view>
 </view>

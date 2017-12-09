@@ -1,19 +1,20 @@
+<import src="../../components/rater/rater.wxml" />
 <view class="page">
   <view class="head-wrap">
-    <image class="bxer-bgimg" src="../../assets/img/bxer-test.png"></image>
+    <image class="bxer-bgimg" src="{{fber.photo}}"></image>
     <view class="head-bg">
       <view class="head-avatar">
-          <image class="avatar" src="../../assets/img/bxer-test.png"></image>
+          <image class="avatar" src="{{fber.photo}}"></image>
       </view>
       <view class="head-name">
-        曾老大
+        {{fber.name}}
       </view>
       <view class="head-intro">
-        <text class="head-des">厦门大学</text>
-        <text class="head-des">金融学</text>
-        <text class="head-des">学士</text>
+        <text class="head-des">{{fber.university}}</text>
+        <text class="head-des">{{fber.major}}</text>
+        <text class="head-des">{{fber.degree}}</text>
       </view>
-      <button class="head-btn">
+      <button class="head-btn" bindtap="argueStart" >
         请TA反辩
       </button>
     </view>
@@ -22,7 +23,7 @@
     <view class="rate">
       <view class="rate-sale">
         <view class="text-num">
-          5.0
+          {{fber.average_score}}
         </view>
         <view class="label">
           用户评分
@@ -31,7 +32,7 @@
       <view class="line"></view>
       <view class="rate-times">
         <view class="text-num">
-          1234
+          {{fber.arguer_num}}
         </view>
         <view class="label">
           服务次数
@@ -50,7 +51,7 @@
         </view>
         <view class="underline"></view>
         <view class="content">
-          毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业
+          {{fber.introduces}}
         </view>
       </view>
       <view class="profile-personal">
@@ -59,37 +60,36 @@
         </view>
         <view class="underline"></view>
         <view class="content">
-          擅长家庭保障及企业投资
+          {{fber.adept}}
         </view>
       </view>
     </view>
     <view class="profile">
-      <view class="profile-personal">
+    <view class="profile-personal">
         <view class="profile-personal-head">
           用户评价
         </view>
         <view class="underline"></view>
-        <view class="user-info">
-          <view class="left">
-            <image class="user-avatar" src="../../assets/img/bxshi.png"></image>
-            <view class="user-nickname">王老五呜呜呜呜名字有多长</view>
+
+        <view class="user-rate" wx:for="{{ evaluates }}" >
+          <view class="user-info">
+            <view class="left">
+              <image class="user-avatar" src="{{item.headimg}}"></image>
+              <view class="user-nickname">{{item.nickname}}</view>
+            </view>
+            <view class="right">
+              <view class="text-num">{{ item.score }}</view>
+              <template is="rater" data="{{ ...$wux.rater['dec'+item.index] }}" />
+            </view>
           </view>
-          <view class="right">
-            <view class="rate">5.0</view>
-            <image class="fber-star" src="../../assets/icon/star.png"></image>
-            <image class="fber-star" src="../../assets/icon/star.png"></image>
-            <image class="fber-star" src="../../assets/icon/star.png"></image>
-            <image class="fber-star" src="../../assets/icon/star.png"></image>
-            <image class="fber-star" src="../../assets/icon/star.png"></image>
+          <view class="content">
+            {{item.score_text}}
           </view>
+          <text class="judgetime">{{item.score_at}}</text>
+          <!-- <text class="judgetime">10:22:44</text> -->
+          <view class="underline"></view>
         </view>
-        <view class="content">
-          非常好的咨询体验,为家庭定制了完美的保障计划.非常好的咨询体验,为家庭定制了完美的保障计划.非常好的咨询体验,为家庭定制了完美的保障计划.非常好的咨询体验,为家庭定制了完美的保障计划.非常好的咨询体验,为家庭定制了完美的保障计划.
-        </view>
-        <text class="judgetime">2017-10-10</text>
-        <text class="judgetime">10:22:44</text>
       </view>
-      <view class="underline"></view>
     </view>
   </view>
 </view>

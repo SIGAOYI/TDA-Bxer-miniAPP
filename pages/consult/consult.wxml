@@ -1,8 +1,8 @@
 <!--logs.wxml-->
 <view class="page">
   <view class="notice">
-    <text class="tip">保险师咨询额度:1个</text>
-    <text class="tip">反辩额度:7个</text>
+    <text class="tip">保险师咨询额度:{{left.consulter}}个</text>
+    <text class="tip">反辩额度:{{left.arguer}}个</text>
     <text class="link">咨询和反辩规则?</text>
   </view>
   <view class="hint" hidden="{{ progress.length !== 0 }}">
@@ -13,27 +13,27 @@
     <button class="consult-btn" bindtap="bindConsult">轻触咨询</button>
   </view>
 <view class="order-wrap">
-  <view class="order" bindtap="orderDetail" wx:for="{{ progress }}" wx:key="{{ index }}">
+  <view class="order" bindtap="orderDetail" wx:for="{{ progress }}" wx:key="{{ index }}"  data-index="{{ index }}" >
     <view class="order-head">
-      <image class="bxerimg" src="{{ item.avatar }}" alt=""></image>
-      <text class="bxername">{{ item.name }}</text>
+      <image class="bxerimg" src="{{ item.consulter.photo }}" alt=""></image>
+      <text class="bxername">{{ item.consulter.name }}</text>
       <image class="iconmore" src="../../assets/icon/more.png" alt=""></image>
     </view>
     <view class="brief-wrap">
       <view class="brief">
         <text class="subbrief">订单编号</text>
-        <text class="subdata">{{ item.order }}</text>
+        <text class="subdata">{{ item.order_no }}</text>
       </view>
       <view class="brief">
         <text class="subbrief">投保预估金额</text>
-        <text class="subdata">{{ item.money }}元</text>
+        <text class="subdata">{{ item.amount_insure_proposed }}元</text>
       </view>
     </view>
 
     <view class="underline"></view>
 
     <view class="head">
-      <view class="{{ idx <= item.step ? 'item success' : 'item' }}" wx:for="{{ item.progress }}" wx:key="{{ idx }}" wx:for-index="idx" wx:for-item="itemName">
+      <view class="{{ idx <= item.convertStep ? 'item success' : 'item' }}" wx:for="{{ item.progress }}" wx:key="{{ idx }}" wx:for-index="idx" wx:for-item="itemName">
         <view class="title">
           {{ itemName.title }}
         </view>

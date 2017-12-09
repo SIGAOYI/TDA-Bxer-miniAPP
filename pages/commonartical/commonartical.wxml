@@ -1,46 +1,211 @@
+<!-- wxml -->
+<!-- 指向微信公众平台首页的web-view https://www.tdacar.cn/f/docpage/3-->
+<!-- <web-view src="{{rpUrl}}"></web-view> -->
 <view class="page">
-    <view class="page__hd">
-        <view class="page__title">页面用途(如:天地安集团)</view>
-        <view class="page__desc">页面描述(如:集团背景的介绍)</view>
-    </view>
-    <view class="page__bd">
-        <view class="weui-article">
-            <view class="weui-article__h1">段落标题(如:集团背景)</view>
-            <view class="weui-article__section">
-                <view class="weui-article__title">章节标题(如:子公司介绍)</view>
-                <view class="weui-article__p">
-                    <image class="weui-article__img" src="../../assets/img/test.jpg" mode="aspectFit" style="height: 180px" />
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">1.1 小节标题(如:厦门天地安代理公司介绍)</view>
-                    <view class="weui-article__p">
-                        天地安集团发起于保险专业代理机构，历经15年，发展成为拥有3家专业保险代理企业、一家全国牌照保险公估企业，以及网络科技公司、汽车服务公司等二十多家子公司和分公司的企业集团。
-                    </view>
-                    <view class="weui-article__p">
-                        天地安网络科技公司自主开发的保险竞标网，是利用互联网技术搭建的保险网络交易平台。她可以让所有投保人轻松得到多家保险公司的报价，可以让大宗保险招投标在互联网技术支持下，实现公平交易。
-                    </view>
-                    <view class="weui-article__p">
-                      天地顺保险公估公司和天地安汽车服务公司构成车险公估业务与网约车业务的跨界合作，形成混业盈利模式，为车险客户服务提供了优于保险同业的硬件条件。进而为实体保险交易平台携带广大中小保险公司产品进入县乡领域解决了售后服务障碍。
-                    </view>
-                    <view class="weui-article__p">
-                      汽车综合业务在提高车险客户服务的同时，还得到了控制车险不当成本的抓手，让保险交易平台的行业价值提高了一个层面。
-                    </view>
-                    <view class="weui-article__p">
-                      天地安集团所属的三家保险代理公司，在保险行业改革开放的政策支持下，积极铺设县乡机构，填补保险行业基层机构的空缺。利用交易平台的优势，集中几十家保险公司的产品和服务，把保险市场化改革产生的种种优惠带给广大基层投保人。
-                    </view>
-                    <view class="weui-article__p">
-                      总之，天地安集团深耕于保险行业，是保险市场化的产物，是促进保险交易走向公平文明的产物，是可以为保障投保人权益起积极作用的产物，必然随着市场化保险业的发展而发展。
-                    </view>
 
-                    </view>
-                </view>
-                <view class="weui-article__section">
-                    <view class="weui-article__h3">1.2 节标题</view>
-                    <view class="weui-article__p">
-                        诸如此类以此类推....
-                    </view>
-                    <image class="weui-article__img" src="../../assets/img/test.jpg" mode="aspectFit" style="height: 180px" />
-                </view>
-            </view>
-        </view>
+  <!-- 天地安集团介绍 -->
+  <view class="page__hd" wx:if='{{pc==="1"}}'>
+    <view class="weui-article__h1 commonBold">天地安集团介绍</view>
+    <view wx:for="{{ ppt }}" wx:for-index="index">
+      <image class="ppt" mode="{{ item.mode }}" src="{{ item.pptUrl }}"></image>
     </view>
+  </view>
+
+  <!-- 保单效力维护协议 -->
+  <view class="page__hd" wx:if='{{pc==="2"}}'>
+    <view class="page__title commonBold">
+      什么是国内首创的“保险师居间服务协议”？
+    </view>
+  </view>
+
+  <video id="myVideo"  wx:if='{{pc==="2"}}' src="https://cdn.tdacar.cn/WeChatSight104.mp4" danmu-list="{{danmuList}}" controls="true" poster="{{ poster }}"></video>
+
+  <view class="page__hd"  wx:if='{{pc==="2"}}'>
+    <view class="weui-article__section">
+      <view class="weui-article__p">
+        免费赠送的保险师居间服务协议，理性的投保人了解之后，都会索要这份协议。保险师居间服务协议有以下作用：
+      </view>
+      <view class="weui-article__p">
+        1、投保前，天地安的反辩师对投保人无论从任何渠道获得的投保方案进行公平专业的反辩。帮助投保人认识到这个方案可能存在的不足，从而理性选择最满意的保险方案，陪伴自己和家人的一生。
+      </view>
+      <view class="weui-article__p">
+        2、几十年期间，投保人就这份保单需要委托的任何有直接关联的事务，天地安负责每年10个工作日以内的免费人力服务。
+      </view>
+      <view class="weui-article__p">
+        3、投保人就这份保单向保险公司提起的任何诉讼，无论是否有道理，天地安都承担50％律师费和诉讼费，以表达天地安对咨询质量的责任担当。
+      </view>
+      <view class="weui-article__p">
+        4、天地安免费接受投保人或被保险人就保单利益分配所需要的保密委托。
+      </view>
+      <view class="weui-article__p">
+        5、天地安负责保单从生成到责任完全终止全过程中，对投保人和被保险人利益的忠诚保障，尽一切职能保证投保人和被保险人投保意愿得到完全落实。
+      </view>
+      <view class="weui-article__p">
+        悍蚁车服的优惠服务。事关人身安全的紧急救援或援助服务，可以免费。
+      </view>
+    </view>
+  </view>
+
+  <!-- 合作保险公司介绍 -->
+  <view class="page__hd" wx:if='{{pc==="4"}}'>
+    <view class="page__title commonBold">
+      合作保险公司介绍
+    </view>
+    <view class="page__desc">
+      副标题描述(如:致力于推动保险业的前进)
+    </view>
+  </view>
+
+  <video id="myVideo"  wx:if='{{pc==="4"}}' src="https://cdn.tdacar.cn/WeChatSight104.mp4" danmu-list="{{danmuList}}" controls="true" poster="{{ poster }}"></video>
+
+  <view class="page__hd"  wx:if='{{pc==="4"}}'>
+    <view class="weui-article__h1">段落标题(如:集团背景)</view>
+    <view class="weui-article__section">
+      <view class="weui-article__title">章节标题(如:子公司介绍)</view>
+      <view class="weui-article__p">
+        <view class="weui-article__section">
+          <view class="weui-article__h3">1.1 小节标题(如:厦门天地安代理公司介绍)</view>
+          <view class="weui-article__p">
+            天地安集团发起于保险专业代理机构，历经15年，发展成为拥有3家专业保险代理企业、一家全国牌照保险公估企业，以及网络科技公司、汽车服务公司等二十多家子公司和分公司的企业集团。
+          </view>
+        </view>
+      </view>
+      <view class="weui-article__section">
+        <view class="weui-article__h3">1.2 节标题</view>
+        <view class="weui-article__p">
+          ....
+        </view>
+        <image class="weui-article__img" src="" alt="我是图片" mode="aspectFit" style="height: 180px" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 文章1 反辩师是什么？为什么设立反辩机制？-->
+  <view class="page__hd" wx:if='{{pc==="n0"}}'>
+    <view class="page__title commonBold">
+      反辩师是什么？为什么设立反辩机制？
+    </view>
+    <view class="weui-article__section upper">
+      <view class="weui-article__p">
+        反辩师，类似于保险师，必须是本一以上相关专业人才，具有扎实的理论功底与专业能力，负责站在客观、公正、严谨的角度对保险师提出的方案进行分析与反辩，尽最大可能根据投保人的需求来来完善投保方案。
+      </view>
+      <view class="weui-article__p">
+        反辩服务，在网络平台上进行，由客户自由选择的保险师与反辩师就方案进行辩论。让客户通过反辩过程轻松了解保单条款和投保方案的正面和负面因素，消除信息不对称障碍，从而明白放心的购买保险产品。
+      </view>
+    </view>
+  </view>
+
+  <!-- 文章2 为什么说“天地安保险师”是绝对中立客观的？-->
+  <view class="page__hd" wx:if='{{pc==="n1"}}'>
+    <view class="page__title commonBold">
+      为什么说“天地安保险师”是绝对中立客观的？
+    </view>
+    <view class="page__desc">
+      天地安的保险咨询、反辩、竞标流程，是目前全国保险业中通过机制和程序来保证信息对称的唯一一家企业。信与不信，要去分析机制是否科学。
+    </view>
+    <view class="weui-article__section upper">
+      <view class="weui-article__p">
+        1、天地安给保险师计算报酬时，同类产品的提成都是相同的，不分哪家保险公司。保险师没有利益驱动去为哪家保险公司代言。
+      </view>
+      <view class="weui-article__p">
+        2、寿险客户服务动辄二三十年，所谓“日久见人心”，天地安立志做全国最大的保险中介企业，不敢放任短期行为。
+      </view>
+      <view class="weui-article__p">
+        3、保险师服务之所以要设计反辩程序，就是为了避免保险师工作有失公平。反辩师的奖励主要来源于客户的评分，与保险佣金没有任何关系，与保险是否成交没有任何关系。所以，反辩程序可以制约保险师有意无意中产生的不公正行为。
+      </view>
+      <view class="weui-article__p">
+        4、保险居间人服务的存在基础是消除信息不对称，天地安如何保证不再形成新的来自居间人与客户之间的信息不对称？靠的不是决心和口号，靠的是机制，是客户看得到信得过的一系列工作流程。
+      </view>
+    </view>
+  </view>
+
+  <!-- 文章3 保险业务员是保险师吗？-->
+  <view class="page__hd" wx:if='{{pc==="n2"}}'>
+    <view class="page__title commonBold">
+      保险业务员是保险师吗？
+    </view>
+    <view class="weui-article__section upper">
+      <view class="weui-article__p">
+        不是。保险业务员的工作重点是寻找客户，为某一家保险公司推销产品。天地安保险师的工作重点是通过网络进行保险居间服务，帮助客户了解整个市场的保险产品，辅导客户自主选择真正需要的保险。天地安保险师做的完全是专业方面的事，不必寻找客户，不必刻意推销哪家保险公司的产品。
+
+      </view>
+      <view class="weui-article__p">
+        目前全国有700多万保险业务员，学历在本一以上的不到1％。也有许多业务员自称保险师，但与天地安保险师不是一个概念。天地安保险师100％本一以上对口专业，天地安保险师不做任何产品推销。
+      </view>
+    </view>
+  </view>
+
+  <!-- 文章4 常见答疑-->
+  <view class="page__hd" wx:if='{{pc==="n3"}}'>
+    <view class="page__title commonBold">
+      其它常见答疑
+    </view>
+    <view class="weui-article">
+      <view class="weui-article__h1">一般工薪家庭，最需要投保哪些保险？</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <view class="weui-article__section">
+            <view class="weui-article__h3"></view>
+            <view class="weui-article__p">
+              有未成年人和无收入老人的家庭，最需要为家庭经济支柱投保大额意外险。保500万，每天保费十几元。大额意外险不能不保。
+            </view>
+            <view class="weui-article__p">
+              如果没有社保，第二重要的保险就是大病医疗保险，建议选择消费型医疗保险，交费不高，永远不要拿回来最好，当着做慈善、献爱心。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-article">
+      <view class="weui-article__h1">问：保险公司业务员总是动员客户投保储蓄型人寿保险，为什么天地安保险师却劝说客户投保消费型人身保险？</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <view class="weui-article__section">
+            <view class="weui-article__h3"></view>
+            <view class="weui-article__p">
+              答:1、货币贬值否定了长期性储蓄型人寿保险的价值，历史经验可以证明。如果三十年前用工资的30％交养老保险费，现在是否可以够基本生活？大家可以自己算算。后三十年货币贬值会比前三十年更快还是更慢，我们不预测，大家自己猜。（请各准保险师算算，30年前某30岁男子，每月交30元，（当年工资不到100），交满30年，现在每月可以领养老金多少元？）
+            </view>
+            <view class="weui-article__p">
+              2、看近年若干激进寿险公司的行为，行业的成熟度并没有为几十年后保险责任和保险服务的稳定兑现做足准备。比如梦幻般美好的养老社区模式，几十年后谁能保证服务和管理能像现在的样板？几年前若干明星城市地产商大量融资时的景象，和现在历历鬼城模样的对比，让我们没有理由坚信许多不成熟企业几十年后的光景会是如何。虽然国家规定寿险企业不能破产，投保本金和一定的利息不会灭失。但并未保证现在承诺的非现金服务一定按约定标准兑现，并未保证现金储蓄在历经贬值后依然有足够的购买力。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-article">
+      <view class="weui-article__h1">问：目前哪个寿险公司的产品比较好些？</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <view class="weui-article__section">
+            <view class="weui-article__h3"></view>
+            <view class="weui-article__p">
+              答：寿险产品和其他商品不同，没有办法简单的对比。除非您有非常具体的需求，例如：我28岁，女，要买一款消费型重大疾病保险。这样问，我们就可以列出各家寿险公司的消费型大病保险，让保险师从价格、责任范围、病种、不利条款、企业信用等等方面给您一一介绍。一般来说，保险师会同时介绍三家保险公司的相关产品让您选择。至于好或者不好，见仁见智，由您自己判断。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-article">
+      <view class="weui-article__h1">问：有保险业务员宣传说：他们的某款产品是畅销产品，买的人多的，肯定是好产品。真的是这样吗？</view>
+      <view class="weui-article__section">
+        <view class="weui-article__p">
+          <view class="weui-article__section">
+            <view class="weui-article__h3">答：不是这样。寿险产品，一定不能通过销量来衡量优劣，理由有：</view>
+            <view class="weui-article__p">
+              1、寿险产品目前基本上不是由客户主动选择购买，哪家保险公司业务员多，哪家保险公司给的佣金多，哪家保险公司营销组织得好，哪家产品的销量就大。目前人寿保险产品的销量，与该产品在同类产品中性价比没有直接关系。
+            </view>
+            <view class="weui-article__p">
+              2、反而，一些畅销产品因为在产品精算时，销售激励费用占了较大的比例，给被保险人的利益就压缩了很多。曾经有过非常明显对比的例子。两家大型寿险公司，同时推出性质基本一样的产品。一家把产品设计重点放在销售激励上，另一家把设计重点放在客户利益上。结果是，前者成百上千亿的疯狂发展，成就了一个巨无霸的金融帝国，还引发了中央电视台连续三次给全国人民提醒：保险需谨慎。而后者，重视客户利益，追求诚实经营，然并卵，无声无息，偃旗息鼓。无奸不商，中国金融发展历史上又一个经典的反面案例。
+            </view>
+            <view class="weui-article__p">
+              2、反而，一些畅销产品因为在产品精算时，销售激励费用占了较大的比例，给被保险人的利益就压缩了很多。曾经有过非常明显对比的例子。两家大型寿险公司，同时推出性质基本一样的产品。一家把产品设计重点放在销售激励上，另一家把设计重点放在客户利益上。结果是，前者成百上千亿的疯狂发展，成就了一个巨无霸的金融帝国，还引发了中央电视台连续三次给全国人民提醒：保险需谨慎。而后者，重视客户利益，追求诚实经营，然并卵，无声无息，偃旗息鼓。无奸不商，中国金融发展历史上又一个经典的反面案例。
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

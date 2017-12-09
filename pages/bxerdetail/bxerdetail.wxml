@@ -1,28 +1,29 @@
 <view class="page">
   <view class="head-wrap">
-    <image class="bxer-bgimg" src="../../assets/img/bxer-test.png"></image>
+    <image class="bxer-bgimg" src="{{ bxs.photo }}"></image>
     <view class="head-bg">
       <view class="head-avatar">
-          <image class="avatar" src="../../assets/img/bxer-test.png"></image>
+        <image class="avatar" src='{{ bxs.photo }}' srcwww="../../assets/img/bxer-test.png"></image>
       </view>
       <view class="head-name">
-        曾老大
+        {{ bxs.name }}
       </view>
       <view class="head-intro">
-        <text class="head-des">厦门大学</text>
-        <text class="head-des">金融学</text>
-        <text class="head-des">学士</text>
+        <text class="head-des">{{ bxs.university }}</text>
+        <text class="head-des">{{ bxs.major }}</text>
+        <text class="head-des">{{ bxs.degree }}</text>
       </view>
-      <button class="head-btn" open-type="contact">
+      <button class="head-btn" open-type="contact" bindtap="consultStart">
         立即咨询
       </button>
+
     </view>
   </view>
   <view class="intro-wrap">
     <view class="rate">
       <view class="rate-sale">
         <view class="text-num">
-          88888
+          {{ bxs.performance }}
         </view>
         <view class="label">
           成交业绩(元)
@@ -31,7 +32,7 @@
       <view class="line"></view>
       <view class="rate-times">
         <view class="text-num">
-          1234
+          {{ bxs.consult_num }}
         </view>
         <view class="label">
           服务次数
@@ -50,7 +51,7 @@
         </view>
         <view class="underline"></view>
         <view class="content">
-          毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业于厦门大学毕业
+          {{ bxs.introduces }}
         </view>
       </view>
       <view class="profile-personal">
@@ -59,7 +60,7 @@
         </view>
         <view class="underline"></view>
         <view class="content">
-          擅长家庭保障及企业投资
+          {{ bxs.adept }}
         </view>
       </view>
     </view>

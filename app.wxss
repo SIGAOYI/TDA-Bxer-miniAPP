@@ -1,4 +1,7 @@
 @import "./common1.wxss";
+@import 'components/wux.wxss';
+@import 'assets/styles/weui.wxss';
+@import 'assets/styles/skyvow.wxss';
 page {
   background-color: #EFEFF4;
 }

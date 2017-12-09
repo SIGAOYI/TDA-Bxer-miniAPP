@@ -11,7 +11,8 @@
     "pages/orderlist/orderlist",
     "pages/orderdetail/orderdetail",
     "pages/commonartical/commonartical",
-    "pages/fb/fb"
+    "pages/fb/fb",
+    "pages/products/products"
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -48,5 +49,5 @@
     "request": 10000,
     "downloadFile": 10000
   },
-  "debug": true
+  "debug": false
 }

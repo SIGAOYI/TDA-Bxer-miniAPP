@@ -6,6 +6,26 @@ Page({
   data: {
     noteMaxLen: 500, //备注最多字数
   },
+  newArgue(e){
+    // console.log('newargue e:',e)
+    let text = e.detail.value.textarea
+    // console.log(text)
+    let fppage = app.navCache.gofbpage
+    console.log('fbask fppage,', fppage)
+    let arguer_id = fppage.arguer.id
+    let order_id = fppage.order.id
+
+    app.rh('newArgue', this.argueCb, { arguer_id, order_id,speaker:0,text})
+  },
+  argueCb(res){
+    console.log('arguecb res',res)
+    if(res.err===''){
+      wx.navigateTo({
+        url: '/pages/fb/fb',
+      })
+    }
+    this.showTopTips()
+  },
   showTopTips: function(){
     var that = this;
     this.setData({
@@ -16,6 +36,7 @@ Page({
             showTopTips: false
         });
     }, 3000);
+
   },
   bindWordLimit: function(e){
    var value = e.detail.value, len = parseInt(value.length);

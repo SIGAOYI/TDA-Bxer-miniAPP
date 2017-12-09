@@ -20,62 +20,87 @@
 }
 .notice .btn-contact {
   margin-left: 350rpx;
-  background-color: #FF6600;
+  background-color: #fff;
   width: 161rpx;
   height: 52rpx;
   font-size: 20rpx;
-  color: #FFFFFF;
+  color: #FF6600;
   letter-spacing: -0.6rpx;
+}
+.notice .btn-contact::after{
+  border-color: #FF6600;
+}
+.head {
+  display: flex;
+  margin-top: 15rpx;
+}
+.title {
+  font-size: 23rpx;
+  font-weight: bold;
+}
+.date {
+  font-size: 20rpx;
+}
+.head .item {
+  flex: 1;
+  text-align: center;
+  color: #555;
+}
+.head .item.success {
+  color: #FF6600 !important;
+}
+
+.head .item.success .line, .head .item.success .point {
+  background-color: #FF6600 !important;
+}
+
+.head .point {
+  position: relative;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #555;
+  border-radius: 50%;
+  margin: 20rpx auto;
+}
+.head .item:nth-child(1) .point .line {
+  display: none;
+}
+.head .item .line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -110rpx;
+  width: 100rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background-color: #555;
 }
 .details {
   display: flex;
   flex-direction: column;
+  align-content: center;
   margin-top: 20rpx;
-  margin-left: 25rpx;
 }
 .details .item {
   display: flex;
+  justify-content: center;
   margin-top: 15rpx;
-}
-.details .process {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translateY(50%);
-}
-.details .item .process .point {
-  width: 20rpx;
-  height: 20rpx;
-  background-color: #FF6600;
-  border-radius: 50%;
-}
-.details .item .process .line {
-  height: 250rpx;
-  width: 4rpx;
-  margin-top: 15rpx;
-  border-radius: 2rpx;
-  background-color: #FF6600;
-}
-.details .item:last-child .process .line {
-  display: none;
 }
 .details .item .state {
   display: flex;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  padding-left: 30rpx;
-  padding-top: 12rpx;
+  align-items: center;
   width: 650rpx;
   background-color: #fff;
 }
+.details .item .state-line {
+  height: 80%;
+  border-right: #FF6600 solid 1rpx;
+}
 .details .item .state .state-title {
   display: flex;
-  height: 100%;
-  width: 110rpx;
+  flex: 0 0 110rpx;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-right: 20rpx;
 }
 .details .item .state .state-title .title {
   font-size: 23rpx;
@@ -83,21 +108,16 @@
 }
 .details .item .state .state-content-done {
   display: flex;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
 }
 .details .item .state .state-content-done .btn-confirm {
   margin-top: 10%;
   width: 161rpx;
   height: 52rpx;
-  background-color: #fff;
+  background-color: #FF6600;
   font-size: 20rpx;
-  color: #FF6600;
-}
-.details .item .state .state-content-done .btn-confirm:after {
-  border-color: #FF6600
+  color: #fff;
 }
 .details .item .state .state-content-done .tips {
   margin-top: 42rpx;
@@ -106,21 +126,33 @@
   color: #9B9B9B;
 }
 .details .item .state .state-content-pending {
+  padding: 30rpx;
+  flex: 1;
+}
+.details .item .state .state-content-pending .pay-btn-wrap {
   display: flex;
-  height: 100%;
-  width: 80%;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+.details .item .state .state-content-pending .pay-btn-wrap .pay-btn {
+  width: 161rpx;
+  height: 52rpx;
+  background-color: #FF6600;
+  font-size: 20rpx;
+  color: #fff;
 }
 .details .item .state .state-content-pending .amount {
   display: flex;
-  width: 80%;
   justify-content: space-between;
   line-height: 2;
 }
 .details .item .state .state-content-pending .amount .amount-title {
   font-size: 20rpx;
   color: #4A4A4A;
+  width: 330rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow: ellipsis;
 }
 .details .item .state .state-content-pending .amount .amount-sum {
   font-size: 20rpx;
@@ -137,8 +169,7 @@
 }
 .details .item .state .state-content-pending .fber{
   display: flex;
-  width: 80%;
-  height: 110rpx;
+  margin-top: 30rpx;
   align-items: center;
   justify-content: space-between;
 }
@@ -169,17 +200,41 @@
 .details .item .state .state-content-pending .fber .linkdes {
   line-height: 60rpx;
   text-align: center;
-  font-size: 23rpx;
+  font-size: 26rpx;
   color: #777577;
 }
 .details .item .state .state-content-pending .fber .add-icon {
-  width: 40rpx;
-  height: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
   overflow: hidden;
+  margin-right: 26rpx;
 }
 .details .item .state .state-content-pending .suggest {
-  display: flex;
-  width: 80%;
   font-size: 20rpx;
-  line-height: 33rpx;
+  line-height: 2;
+}
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 239rpx;
+}
+.hint .hint-img {
+}
+.hint .hint-img .img{
+  width: 334rpx;
+  height: 181rpx;
+}
+.hint .hint-img .text {
+  text-align: center;
+  font-size: 26rpx;
+  color: #9B9B9B;
+}
+.hint .consult-btn {
+  margin-top: 40rpx;
+  width: 233rpx;
+  height: 60rpx;
+  background-color: #FF6600;
+  font-size: 26rpx;
+  color: #FFFFFF;
 }

@@ -1,30 +1,44 @@
 <!--logs.wxml-->
 <view class="page">
   <view class="notice">
-    <image class="avatar" src="../../assets/img/bxshi.png"></image>
-    <text class="des-name">我的管家</text>
-    <button class="btn-contact">联系客服</button>
+    <image class="avatar" src="{{order.consulter.photo}}"></image>
+    <text class="des-name">{{order.consulter.name}}</text>
+    <button class="btn-contact" bindtap="contact" open-type="contact" >联系{{convertStep<3?'保险师':'管家'}}</button>
   </view>
-
-  <view class="details">
-    <!-- 投保成功 -->
-    <view class="item">
-      <view class="process">
-        <view class="point"></view>
+  <!-- 进度条 -->
+  <view class="head">
+    <view class="{{ index <= convertStep ? 'item success' : 'item' }}" wx:for="{{ progress }}" wx:key="{{ index }}">
+      <view class="point">
         <view class="line"></view>
       </view>
+      <view class="title">
+        {{ item.title }}
+      </view>
+      <view class="date">
+        {{ item.date }}
+      </view>
+    </view>
+  </view>
+  <view class="details">
+
+    <!-- 投保成功 -->
+    <view class="item" wx:if='{{order.step>=step_insure_success}}'>
       <view class="state">
         <view class="state-title">
           <view class="title">
             投保成功
           </view>
           <view class="title">
-            10-20
+            第5步
           </view>
         </view>
-        <view class="state-content-done">
-          <button class="btn-confirm" bindtap="checkBillPic">
+        <view class="state-line"></view>
+        <view class="state-content-done" wx:if='{{order.step<step_confirm_receipt}}'>
+          <button class="btn-confirm" bindtap="confirmBill" wx:if="{{ !billConfirm }}" hidden="{{ billConfirm }}">
             确认收货
+          </button>
+          <button class="btn-confirm" bindtap="checkBillPic" wx:if="{{ billConfirm }}">
+            查看保单
           </button>
           <view class="tips">
             <text>保险公司已出单，并已发出快递\n在您收到保单后，请轻触确认按钮</text>
@@ -33,32 +47,29 @@
       </view>
     </view>
     <!-- 投保确认 -->
-    <view class="item">
-      <view class="process">
-        <view class="point"></view>
-        <view class="line"></view>
-      </view>
+    <view class="item" wx:if='{{order.step>=step_payover_insure_confirm}}' >
       <view class="state">
         <view class="state-title">
           <view class="title">
             投保确认
           </view>
           <view class="title">
-            10-15
+            第4步
           </view>
         </view>
+        <view class="state-line"></view>
         <view class="state-content-pending">
           <view class="amount">
             <text class="amount-title">投保建议金额:</text>
-            <text class="amount-sum">888元</text>
+            <text class="amount-sum">{{order.amount_insure_proposed/100}}元</text>
           </view>
           <view class="amount">
             <text class="amount-title">保险公司实收金额:</text>
-            <text class="amount-sum">888元</text>
+            <text class="amount-sum">{{order.amount/100}}元</text>
           </view>
           <view class="amount">
             <text class="amount-title">退补差额:</text>
-            <text class="amount-sum">888元</text>
+            <text class="amount-sum">{{order.amount_adjust/100}}元</text>
           </view>
           <view class="tips">
             <text>保险公司出单中,请耐心等待...</text>
@@ -67,117 +78,115 @@
       </view>
     </view>
     <!-- 待投保 -->
-    <view class="item">
-      <view class="process">
-        <view class="point"></view>
-        <view class="line"></view>
-      </view>
+    <view class="item" wx:if="{{ convertStep>1 }}" >
       <view class="state">
         <view class="state-title">
           <view class="title">
             待投保
           </view>
           <view class="title">
-            10-15
+            第3步
           </view>
         </view>
+        <view class="state-line"></view>
         <view class="state-content-pending">
-          <view class="amount">
-            <text class="amount-title">阳光i保终身重大疾病保险 </text>
-            <text class="amount-sum">888元</text>
+           <view class="" wx:for="{{ insures }}" wx:key="{{ index }}" data-index="{{ index }}">
+            <view class="amount">
+              <text class="amount-title">{{item.product.name}} </text>
+              <text class="amount-sum">{{item.amount/100}}元</text>
+            </view>
           </view>
-          <view class="amount">
-            <text class="amount-title">阳光i保终身重大疾病保险 </text>
-            <text class="amount-sum">1888元</text>
-          </view>
-          <view class="amount">
-            <text class="amount-title">阳光i保终身重大疾病保险 </text>
-            <text class="amount-sum">12888元</text>
-          </view>
+          <!-- 合计 -->
           <view class="amount">
             <text class="amount-title blod">合计:</text>
-            <text class="amount-sum blod">15664元</text>
+            <text class="amount-sum blod">{{insureSum/100}}元</text>
           </view>
-          <view class="tips">
-            <text>已支付:15664元</text>
+          <!-- 支付按钮,暂时屏蔽在线支付 -->
+          <view class="pay-btn-wrap" wx:if='{{pay_button_show}}' >
+            <!-- <button class="pay-btn" bindtap="payOnline">在线支付</button> -->
+            <button class="pay-btn" bindtap="payOffline" >确认投保</button>
+          </view>
+          <!-- 支付成功后显示 -->
+          <view class="tips" wx:if="{{ sel_offLine_after_show }}">
+            <text>提交成功!客服管家会尽快联系您!</text>
           </view>
         </view>
       </view>
     </view>
     <!-- 反辩 -->
-    <view class="item">
-      <view class="process">
-        <view class="point"></view>
-        <view class="line"></view>
-      </view>
+    <view class="item" wx:if="{{ convertStep>1 }}">
       <view class="state">
         <view class="state-title">
           <view class="title">
             反辩
           </view>
           <view class="title">
-            10-10
+            第2步
           </view>
         </view>
+        <view class="state-line"></view>
         <view class="state-content-pending">
-          <view class="fber" bindtap="bindFb">
+          <view class="fber" bindtap="bindFb" data-index="{{ index }}" wx:for="{{ arguers }}" >
+              <view class="left">
+                <image class="fber-avatar" src="{{item.photo}}"></image>
+                <view class="name">{{item.name}}</view>
+              </view>
+              <view class="linkdes weui-cell__ft_in-access">前往反辩页面</view>
+          </view>
+          <!-- <view class="fber" bindtap="bindFb">
             <view class="left">
               <image class="fber-avatar" src="../../assets/img/bxshi.png"></image>
-              <view class="name">曾</view>
+              <view class="name">曾二</view>
             </view>
             <view class="linkdes weui-cell__ft_in-access">前往反辩页面</view>
           </view>
-            <view class="fber" bindtap="bindFb">
-              <view class="left">
-                <image class="fber-avatar" src="../../assets/img/bxshi.png"></image>
-                <view class="name">曾二</view>
-              </view>
-              <view class="linkdes weui-cell__ft_in-access">前往反辩页面</view>
+          <view class="fber">
+            <view class="left">
+              <image class="fber-avatar" src="../../assets/img/bxshi.png"></image>
+              <view class="name">曾老大曾老</view>
             </view>
-            <!-- <view class="fber">
-              <view class="left">
-                <image class="fber-avatar" src="../../assets/img/bxshi.png"></image>
-                <view class="name">曾老大曾老</view>
-              </view>
-              <view class="linkdes weui-cell__ft_in-access">前往反辩页面</view>
-            </view> -->
-            <!-- 添加反辩师 -->
-            <view class="fber" bindtap="fberList">
-              <view class="left">
-                <image class="icon" src="../../assets/icon/add.png"></image>
-                <view class="linkdes">添加反辩师</view>
-              </view>
+            <view class="linkdes weui-cell__ft_in-access">前往反辩页面</view>
+          </view> -->
+          <!-- 添加反辩师 -->
+          <view class="fber" bindtap="fberList" wx:if='{{order.arguer3===null && order.step<step_argue_over}}' >
+            <view class="left">
+              <image class="add-icon" src="../../assets/icon/add.png"></image>
+              <view class="linkdes">添加反辩师</view>
             </view>
+          </view>
         </view>
       </view>
     </view>
     <!-- 咨询 -->
-    <view class="item">
-      <view class="process">
-        <view class="point"></view>
-        <view class="line"></view>
-      </view>
+    <view class="item"  wx:if="{{ convertStep>1 }}">
       <view class="state">
         <view class="state-title">
           <view class="title">
             咨询
           </view>
           <view class="title">
-            10-11
+            第1步
           </view>
         </view>
+        <view class="state-line"></view>
         <view class="state-content-pending">
-            <view class="suggest">
-              保险师建议:
-              （1）家庭日常生活支出、子女教育费用以及老人赡养费用
-              （2）家庭所负担的债务（如房贷车贷以及家庭其它负债）
-              （3）家庭日常生活支出、子女教育费用以及老人赡养费用
-              （4）家庭所负担的债务（如房贷车贷以及家庭其它负债）
-              （3）家庭日常生活支出、子女教
-            </view>
+          <view class="suggest">
+            {{order.consult_suggest}}
+             <!-- ---- 保险师建议: （1）家庭日常生活支出、子女教育费用以及老人赡养费用 （2）家庭所负担的债务（如房贷车贷以及家庭其它负债） （3）家庭日常生活支出、子女教育费用以及老人赡养费用 （4）家庭所负担的债务（如房贷车贷以及家庭其它负债） （3）家庭日常生活支出、子女教 -->
+          </view>
         </view>
       </view>
     </view>
+    <view class="hint"  wx:if="{{ convertStep<1 }}">
+        <view class="hint-img">
+          <image class="img" src="../../assets/icon/no-order.png"></image>
+          <view class="text">请同保险师充分沟通</view>
+          <view class="text">以便尽快为您制作保障方案</view>
+        </view>
+        <button class="consult-btn" bindtap="contact" >
+          轻触继续咨询</button>
+    </view>
+
   </view>
 
 </view>

@@ -80,9 +80,20 @@
 }
 .listwrap {
   margin-top: 25rpx;
-  height: 313rpx;
+  height: 343rpx;
   width: 750rpx;
+  padding-bottom: 20rpx;
   background-color: #FFFFFF;
+}
+.listwrapChild {
+  height: 259rpx;
+  width: 750rpx;
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 .listhead {
   position: relative;

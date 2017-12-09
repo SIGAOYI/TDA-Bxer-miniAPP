@@ -88,7 +88,7 @@
   color: #9B9B9B;
   letter-spacing: -1.17rpx;
 }
-.intro-wrap .rate .text-num {
+.text-num {
   font-size: 39rpx;
   color: #FFB300;
 }
@@ -146,7 +146,7 @@
   margin-top: 20rpx;
   justify-content: space-between;
   padding-left: 25rpx;
-  height: 80rpx;
+  height: 90rpx;
 }
 .profile .profile-personal .left {
   display: flex;
@@ -154,7 +154,6 @@
 }
 .profile .profile-personal .right {
   display: flex;
-  align-items: center;
 }
 .profile .profile-personal .user-info .user-avatar {
   margin-right: 10rpx;
@@ -165,6 +164,10 @@
 .profile .profile-personal .user-info .user-nickname {
   font-size: 26rpx;
   color: #000000;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space:nowrap;
+  width: 280rpx;
 }
 .profile .profile-personal .user-info .rate {
   margin-right: 12rpx;
