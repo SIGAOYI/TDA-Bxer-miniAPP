@@ -34,12 +34,6 @@
 					"name": "bxerlist",
 					"pathName": "pages/bxerlist/bxerlist",
 					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "products",
-					"pathName": "pages/products/products",
-					"query": ""
 				}
 			]
 		}

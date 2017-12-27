@@ -7,14 +7,3 @@ image{
 #myVideo {
   width: 750rpx;
 }
-.ppt {
-  display: flex;
-  margin-left: -80rpx;
-  width: 750rpx;
-}
-.upper {
-  margin-top: 40rpx;
-}
-.commonBold {
-  font-weight: bold;
-}

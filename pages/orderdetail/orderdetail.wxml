@@ -183,7 +183,7 @@
           <view class="text">请同保险师充分沟通</view>
           <view class="text">以便尽快为您制作保障方案</view>
         </view>
-        <button class="consult-btn" bindtap="contact" >
+        <button class="consult-btn" open-type="contact" bindtap="contact" >
           轻触继续咨询</button>
     </view>
 

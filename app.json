@@ -11,8 +11,8 @@
     "pages/orderlist/orderlist",
     "pages/orderdetail/orderdetail",
     "pages/commonartical/commonartical",
-    "pages/fb/fb",
-    "pages/products/products"
+    "pages/products/products",
+    "pages/fb/fb"
   ],
   "window":{
     "backgroundTextStyle":"dark",

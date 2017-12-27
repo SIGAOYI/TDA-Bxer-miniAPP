@@ -48,7 +48,7 @@ Page({
   onShareAppMessage: function () {
     return {
       title: '天地安保险师',
-      path: '/pages/indexindex'
+      path: '/pages/index/nidex'
     }
   },
 })

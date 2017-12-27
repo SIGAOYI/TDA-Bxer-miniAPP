@@ -5,7 +5,7 @@
 
   <!-- 天地安集团介绍 -->
   <view class="page__hd" wx:if='{{pc==="1"}}'>
-    <view class="weui-article__h1 commonBold">天地安集团介绍</view>
+    <view class="weui-article__h1">天地安集团介绍</view>
     <view wx:for="{{ ppt }}" wx:for-index="index">
       <image class="ppt" mode="{{ item.mode }}" src="{{ item.pptUrl }}"></image>
     </view>
@@ -13,7 +13,7 @@
 
   <!-- 保单效力维护协议 -->
   <view class="page__hd" wx:if='{{pc==="2"}}'>
-    <view class="page__title commonBold">
+    <view class="page__title">
       什么是国内首创的“保险师居间服务协议”？
     </view>
   </view>
@@ -48,7 +48,7 @@
 
   <!-- 合作保险公司介绍 -->
   <view class="page__hd" wx:if='{{pc==="4"}}'>
-    <view class="page__title commonBold">
+    <view class="page__title">
       合作保险公司介绍
     </view>
     <view class="page__desc">
@@ -82,10 +82,10 @@
 
   <!-- 文章1 反辩师是什么？为什么设立反辩机制？-->
   <view class="page__hd" wx:if='{{pc==="n0"}}'>
-    <view class="page__title commonBold">
+    <view class="page__title">
       反辩师是什么？为什么设立反辩机制？
     </view>
-    <view class="weui-article__section upper">
+    <view class="weui-article__section">
       <view class="weui-article__p">
         反辩师，类似于保险师，必须是本一以上相关专业人才，具有扎实的理论功底与专业能力，负责站在客观、公正、严谨的角度对保险师提出的方案进行分析与反辩，尽最大可能根据投保人的需求来来完善投保方案。
       </view>
@@ -97,13 +97,13 @@
 
   <!-- 文章2 为什么说“天地安保险师”是绝对中立客观的？-->
   <view class="page__hd" wx:if='{{pc==="n1"}}'>
-    <view class="page__title commonBold">
+    <view class="page__title">
       为什么说“天地安保险师”是绝对中立客观的？
     </view>
     <view class="page__desc">
       天地安的保险咨询、反辩、竞标流程，是目前全国保险业中通过机制和程序来保证信息对称的唯一一家企业。信与不信，要去分析机制是否科学。
     </view>
-    <view class="weui-article__section upper">
+    <view class="weui-article__section">
       <view class="weui-article__p">
         1、天地安给保险师计算报酬时，同类产品的提成都是相同的，不分哪家保险公司。保险师没有利益驱动去为哪家保险公司代言。
       </view>
@@ -121,10 +121,10 @@
 
   <!-- 文章3 保险业务员是保险师吗？-->
   <view class="page__hd" wx:if='{{pc==="n2"}}'>
-    <view class="page__title commonBold">
+    <view class="page__title">
       保险业务员是保险师吗？
     </view>
-    <view class="weui-article__section upper">
+    <view class="weui-article__section">
       <view class="weui-article__p">
         不是。保险业务员的工作重点是寻找客户，为某一家保险公司推销产品。天地安保险师的工作重点是通过网络进行保险居间服务，帮助客户了解整个市场的保险产品，辅导客户自主选择真正需要的保险。天地安保险师做的完全是专业方面的事，不必寻找客户，不必刻意推销哪家保险公司的产品。
 
@@ -137,9 +137,7 @@
 
   <!-- 文章4 常见答疑-->
   <view class="page__hd" wx:if='{{pc==="n3"}}'>
-    <view class="page__title commonBold">
-      其它常见答疑
-    </view>
+
     <view class="weui-article">
       <view class="weui-article__h1">一般工薪家庭，最需要投保哪些保险？</view>
       <view class="weui-article__section">

@@ -7,8 +7,8 @@ import { $wuxToast } from '../../components/wux'
 Page({
   data: {
     movies: [
-      { urlpath: 'http://ww3.sinaimg.cn/large/0060lm7Tly1fkgs67glagj30ku06uadb.jpg' },
-      { urlpath: 'http://ww2.sinaimg.cn/large/0060lm7Tly1fkgs67btmlj30ku06uglj.jpg' }
+      // { urlpath: 'http://ww3.sinaimg.cn/large/0060lm7Tly1fkgs67glagj30ku06uadb.jpg' },
+      // { urlpath: 'http://ww2.sinaimg.cn/large/0060lm7Tly1fkgs67btmlj30ku06uglj.jpg' }
     ],
     wxUserInfo:null,
     news:[],

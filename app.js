@@ -270,7 +270,7 @@ App({
 
     //   return 
     // }
-    this.hostpath = "http://" + this.globalData.domain
+    this.hostpath = "https://" + this.globalData.domain
     var path = this.hostpath + "/f/" + api;
     var ch = this.cookieHeader;
     console.log('---rh ch:', ch, "islogin:", this.isLogin)
