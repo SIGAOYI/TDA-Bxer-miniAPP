@@ -9,7 +9,7 @@ App({
   },
   initData() {
     wx.setEnableDebug({
-      enableDebug: true
+      enableDebug: false
     })
 
     // var jwt = wx.getStorageSync('jwt');
@@ -22,7 +22,7 @@ App({
     this.wxLogin(this.prepareToLogin)
     // this.wxGetSetting(this.userInfoReadyCallback)
     this.getWxUser(this.prepareToLogin)
-  }, 
+  },
   globalData: {
     userInfo: null,
     domain: 'bxs.tdacar.cn',
@@ -268,7 +268,7 @@ App({
     // var path = "https://" + this.globalData.domain + "/f/" + api;
     // if(!this.isLogin){
 
-    //   return 
+    //   return
     // }
     this.hostpath = "https://" + this.globalData.domain
     var path = this.hostpath + "/f/" + api;
